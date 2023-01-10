@@ -42,6 +42,7 @@ public class TestCalcForceExertedBy {
         Body b2 = new Body(2.0, 1.0, 3.0, 4.0, 4e11, "jupiter.gif");
         Body b3 = new Body(4.0, 5.0, 3.0, 4.0, 5.0, "jupiter.gif");
 
+        System.out.println(b1.calcDistance(b3));
         checkEquals(b1.calcForceExertedBy(b2), 133.4, "calcForceExertedBy()", 0.01);
         checkEquals(b1.calcForceExertedBy(b3), 6.67e-11, "calcForceExertedBy()", 0.01);
     }
