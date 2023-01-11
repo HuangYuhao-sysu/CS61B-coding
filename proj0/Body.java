@@ -68,4 +68,19 @@ public class Body {
         }
         return netF;
     }
+    
+    public void update(double dt, double fX, double fY) {
+        double aX;
+        double aY;
+        aX = fX/this.mass;
+        aY = fY/this.mass;
+        this.xxVel = this.xxVel + aX*dt;
+        this.yyVel = this.yyVel + aY*dt;
+        this.xxPos = this.xxPos + this.xxVel*dt;
+        this.yyPos = this.yyPos + this.yyVel*dt;
+    }
+
+    public void draw() {
+        StdDraw.picture(this.xxPos, this.yyPos, "images/"+this.imgFileName);
+    }
 }
