@@ -35,8 +35,6 @@ public class LinkedListDequeTest {
 	  * && is the "and" operation. */
 	public static void addIsEmptySizeTest() {
 		System.out.println("Running add/isEmpty/Size test.");
-		System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
-		/*
 		LinkedListDeque<String> lld1 = new LinkedListDeque<String>();
 
 		boolean passed = checkEmpty(true, lld1.isEmpty());
@@ -58,7 +56,6 @@ public class LinkedListDequeTest {
 		lld1.printDeque();
 
 		printTestStatus(passed);
-		*/
 	}
 
 	/** Adds an item, then removes an item, and ensures that dll is empty afterwards. */
@@ -66,8 +63,6 @@ public class LinkedListDequeTest {
 
 		System.out.println("Running add/remove test.");
 
-		System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
-		/*
 		LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
 		// should be empty 
 		boolean passed = checkEmpty(true, lld1.isEmpty());
@@ -81,12 +76,50 @@ public class LinkedListDequeTest {
 		passed = checkEmpty(true, lld1.isEmpty()) && passed;
 
 		printTestStatus(passed);
-		*/
+	}
+
+	public static void myTest() {
+		System.out.println("Running def/copy class test.");
+
+		LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>(5);
+
+		lld1.addFirst(10);
+		lld1.addLast(0);
+		lld1.printDeque();
+
+		/** Test copy. */
+		LinkedListDeque<Integer> lld2 = new LinkedListDeque<Integer>(lld1);
+		lld2.addFirst(15);
+		lld2.addLast(-5);
+		lld2.printDeque();
+		lld1.printDeque();
+		printTestStatus(true);
+
+		/** Test get. */
+		for (int i = -2; i < lld2.size()+2; i++) {
+			System.out.println(lld2.get(i));
+		}
+		printTestStatus(true);
+
+		/** Test get Recursive. */
+		for (int i = -2; i < lld2.size()+2; i++) {
+			System.out.println(lld2.getRecursive(i));
+		}
+		printTestStatus(true);
+
+		/** Test removing. */
+		lld2.removeFirst();
+		lld2.removeLast();
+		lld2.printDeque();
+		LinkedListDeque<Integer> lld3 = new LinkedListDeque<Integer>();
+		lld3.removeFirst();
+		lld3.printDeque();
 	}
 
 	public static void main(String[] args) {
 		System.out.println("Running tests.\n");
 		addIsEmptySizeTest();
 		addRemoveTest();
+		myTest();
 	}
 } 
