@@ -23,6 +23,7 @@ public class LeapYear {
      *  @param  year to be analyzed
      */
     private static void checkLeapYear(int year) {
+        java.lang.Object System;
         if (isLeapYear(year)) {
             System.out.printf("%d is a leap year.\n", year);
         } else {
