@@ -1,12 +1,10 @@
-public interface Deque<T> {
-    void addFirst(T item);
-    void addLast(T item);
-    T getFirst();
-    T getLast();
-    T get(int index);
+public interface Deque<Item> {
+    void addFirst(Item item);
+    void addLast(Item item);
+    Item get(int index);
     int size();
-    T removeFirst();
-    T removeLast();
+    Item removeFirst();
+    Item removeLast();
     boolean isEmpty();
-    void printDeque()
+    void printDeque();
 }

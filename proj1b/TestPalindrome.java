@@ -16,7 +16,29 @@ public class TestPalindrome {
         assertEquals("persiflage", actual);
     }
 
-    public static void main(String[] args) {
-        testWordToDeque();
+    @Test
+    public void testIsPalindrome() {
+        String[] trueWords = {"noon", "recacer"};
+        String[] falseWords = {"hello", "excellent"};
+        String[] specialWords = {"", "a"};
+        assertTrue(palindrome.isPalindrome(trueWords[0]));
+        assertTrue(palindrome.isPalindrome(trueWords[1]));
+        assertFalse(palindrome.isPalindrome(falseWords[0]));
+        assertFalse(palindrome.isPalindrome(falseWords[1]));
+        assertTrue(palindrome.isPalindrome(specialWords[0]));
+        assertTrue(palindrome.isPalindrome(specialWords[1]));
+    }
+    @Test
+    public void testIsPalindrome2() {
+        CharacterComparator cc = new OffByOne();
+        String[] trueWords = {"flake", "lak"};
+        String[] falseWords = {"hello", "excellent"};
+        String[] specialWords = {"", "a"};
+        assertTrue(palindrome.isPalindrome(trueWords[0],cc));
+        assertTrue(palindrome.isPalindrome(trueWords[1],cc));
+        assertFalse(palindrome.isPalindrome(falseWords[0],cc));
+        assertFalse(palindrome.isPalindrome(falseWords[1],cc));
+        assertTrue(palindrome.isPalindrome(specialWords[0],cc));
+        assertTrue(palindrome.isPalindrome(specialWords[1],cc));
     }
 }
