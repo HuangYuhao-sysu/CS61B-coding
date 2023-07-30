@@ -5,23 +5,25 @@ public class TestOffByOne {
     // You must use this CharacterComparator and not instantiate
     // new ones, or the autograder might be upset.
     static CharacterComparator offByOne = new OffByOne();
-    static CharacterComparator offBy6 = new OffByN(6);
 
     // Your tests go here.
-    @Test
-    public void equalCharTest() {
-        assertTrue(offByOne.equalChars('a','b'));
-        assertTrue(offByOne.equalChars('r','q'));
-        assertFalse(offByOne.equalChars('a','e'));
-        assertFalse(offByOne.equalChars('a','z'));
-        assertFalse(offByOne.equalChars('a','a'));
-        assertTrue(offByOne.equalChars('&','%'));
+    @Test(expected = IllegalArgumentException.class)
+    public void testEqualChars() {
+        String a = "abcd";
+        String b = "bcde";
+        String c = "cdef";
+        for (int i = 0; i < a.length(); i += 1) {
+            assertTrue(offByOne.equalChars(a.charAt(i), b.charAt(i)));
+            assertTrue(offByOne.equalChars(b.charAt(i), a.charAt(i)));
+        }
+        for (int i = 0; i < a.length(); i += 1) {
+            assertFalse(offByOne.equalChars(a.charAt(i), c.charAt(i)));
+        }
+        offByOne.equalChars('%', '&');
     }
 
     @Test
-    public void equalCharTestN() {
-        assertTrue(offBy6.equalChars('a','g'));
-        assertTrue(offBy6.equalChars('g','a'));
-        assertFalse(offBy6.equalChars('a','a'));
+    public void testIsPalindrome() {
+
     }
 }

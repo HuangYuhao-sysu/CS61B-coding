@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4a4dacd8-571e-4fb0-b9b8-a54701cf6d15" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/LinkedListDeque.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestOffByN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2setup/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2setup/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2setup/DogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2setup/DogTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2setup/out/production/lab2setup/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2setup/out/production/lab2setup/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2setup/out/production/lab2setup/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2setup/out/production/lab2setup/Dog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2setup/out/production/lab2setup/DogTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2setup/out/production/lab2setup/DogTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArrayDeque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deque.java" beforeDir="false" afterPath="$PROJECT_DIR$/Deque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OffByN.java" beforeDir="false" afterPath="$PROJECT_DIR$/OffByN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OffByOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/OffByOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/Palindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PalindromeFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/PalindromeFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestOffByOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/TestOffByOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/TestPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proj1b/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proj1b/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj1b/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proj1b/ArrayDeque.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proj1b/CharacterComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj1b/CharacterComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proj1b/Deque.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj1b/Deque.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proj1b/OffByN.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj1b/OffByN.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proj1b/OffByOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj1b/OffByOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proj1b/Palindrome.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj1b/Palindrome.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proj1b/TestOffByOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj1b/TestOffByOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proj1b/TestPalindrome.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj1b/TestPalindrome.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2TH6KgISZVqlDwwuRifUj52we6T" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="JUnit.TestOffByN.testEqualChars">
+    <configuration name="PalindromeFinder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PalindromeFinder" />
+      <module name="proj1b" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestOffByN.testEqualChars" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1b" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestOffByN" />
+      <option name="METHOD_NAME" value="testEqualChars" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestOffByOne.testEqualChars" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1b" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestOffByOne" />
+      <option name="METHOD_NAME" value="testEqualChars" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestPalindrome.testIsPalindrome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1b" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestPalindrome" />
+      <option name="METHOD_NAME" value="testIsPalindrome" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestPalindrome.testWordToDeque" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1b" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestPalindrome" />
+      <option name="METHOD_NAME" value="testWordToDeque" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestOffByN.testEqualChars" />
+        <item itemvalue="JUnit.TestPalindrome.testIsPalindrome" />
+        <item itemvalue="JUnit.TestOffByOne.testEqualChars" />
+        <item itemvalue="Application.PalindromeFinder" />
+        <item itemvalue="JUnit.TestPalindrome.testWordToDeque" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4a4dacd8-571e-4fb0-b9b8-a54701cf6d15" name="Changes" comment="" />
+      <created>1690687597778</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690687597778</updated>
+      <workItem from="1690687599018" duration="2640000" />
+      <workItem from="1690699540302" duration="6176000" />
+      <workItem from="1690721403742" duration="1470000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

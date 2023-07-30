@@ -18,27 +18,30 @@ public class TestPalindrome {
 
     @Test
     public void testIsPalindrome() {
-        String[] trueWords = {"noon", "recacer"};
-        String[] falseWords = {"hello", "excellent"};
-        String[] specialWords = {"", "a"};
-        assertTrue(palindrome.isPalindrome(trueWords[0]));
-        assertTrue(palindrome.isPalindrome(trueWords[1]));
-        assertFalse(palindrome.isPalindrome(falseWords[0]));
-        assertFalse(palindrome.isPalindrome(falseWords[1]));
-        assertTrue(palindrome.isPalindrome(specialWords[0]));
-        assertTrue(palindrome.isPalindrome(specialWords[1]));
+        String[] palindromeWord = new String[]{"a","","z","noon","racecar"};
+        String[] notPalindromeWord = new String[]{"fuck","hello","word"};
+        for (String w : palindromeWord) {
+            assertTrue(palindrome.isPalindrome(w));
+        }
+        for (String w : notPalindromeWord) {
+            assertFalse(palindrome.isPalindrome(w));
+        }
+
+        /*
+        * Test overload Palindrome.
+        * */
+        //CharacterComparator cc1 = new OffByOne();
+        CharacterComparator cc1 = new OffByN(1);
+
+        String[] palindromeOffByOne = new String[]{"a","","z","flake"};
+        String[] notPalindromeOffByOne = new String[]{"fuck","hello","word"};
+        for (String w : palindromeOffByOne) {
+            assertTrue(palindrome.isPalindrome(w,cc1));
+        }
+        for (String w : notPalindromeOffByOne) {
+            assertFalse(palindrome.isPalindrome(w,cc1));
+        }
     }
-    @Test
-    public void testIsPalindrome2() {
-        CharacterComparator cc = new OffByOne();
-        String[] trueWords = {"flake", "lak"};
-        String[] falseWords = {"hello", "excellent"};
-        String[] specialWords = {"", "a"};
-        assertTrue(palindrome.isPalindrome(trueWords[0],cc));
-        assertTrue(palindrome.isPalindrome(trueWords[1],cc));
-        assertFalse(palindrome.isPalindrome(falseWords[0],cc));
-        assertFalse(palindrome.isPalindrome(falseWords[1],cc));
-        assertTrue(palindrome.isPalindrome(specialWords[0],cc));
-        assertTrue(palindrome.isPalindrome(specialWords[1],cc));
-    }
+
+
 }

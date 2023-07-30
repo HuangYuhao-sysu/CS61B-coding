@@ -1,10 +1,25 @@
-public interface Deque<Item> {
-    void addFirst(Item item);
-    void addLast(Item item);
-    Item get(int index);
-    int size();
-    Item removeFirst();
-    Item removeLast();
-    boolean isEmpty();
-    void printDeque();
+public interface Deque<T> {
+    public void addFirst(T item);
+
+    public void addLast(T item);
+
+    /**
+     * Default implementation of isEmpty.
+     * */
+    public default boolean isEmpty() {
+        if (size() == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public int size();
+
+    public void printDeque();
+
+    public T removeFirst();
+
+    public T removeLast();
+
+    public T get(int index);
 }

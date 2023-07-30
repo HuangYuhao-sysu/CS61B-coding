@@ -1,4 +1,3 @@
-package lab2setup;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
