@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public interface IntList {
+import java.util.List;
+
+public interface IntList extends List {
 }
