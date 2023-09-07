@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * A String-like class that allows users to add and remove characters in the String
  * in constant time and have a constant-time hash function. Used for the Rabin-Karp
@@ -17,6 +19,10 @@ class RollingString{
      */
     static final int PRIMEBASE = 6113;
 
+
+    private ArrayList<Character> s; // string
+    private int l;                  // length
+
     /**
      * Initializes a RollingString with a current value of String s.
      * s must be the same length as the maximum length.
@@ -24,6 +30,11 @@ class RollingString{
     public RollingString(String s, int length) {
         assert(s.length() == length);
         /* FIX ME */
+        this.s = new ArrayList<Character>();
+        for (int i = 0; i < s.length(); i += 1) {
+            this.s.add(s.charAt(i));
+        }
+        this.l = length;
     }
 
     /**
@@ -33,6 +44,8 @@ class RollingString{
      */
     public void addChar(char c) {
         /* FIX ME */
+        s.add(c);
+        s.remove(0);
     }
 
 
@@ -44,7 +57,10 @@ class RollingString{
     public String toString() {
         StringBuilder strb = new StringBuilder();
         /* FIX ME */
-        return "";
+        for (Character c : s) {
+            strb.append(c);
+        }
+        return strb.toString();
     }
 
     /**
@@ -53,7 +69,7 @@ class RollingString{
      */
     public int length() {
         /* FIX ME */
-        return -1;
+        return l;
     }
 
 
@@ -65,7 +81,14 @@ class RollingString{
     @Override
     public boolean equals(Object o) {
         /* FIX ME */
-        return false;
+        String otherString = ((RollingString) o).toString();
+        if (otherString.length() != this.l) return false;
+        if (otherString.length() == this.l) {
+            for (int i = 0; i < this.l; i += 1) {
+                if (s.get(i) != otherString.charAt(i)) return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -75,6 +98,15 @@ class RollingString{
     @Override
     public int hashCode() {
         /* FIX ME */
-        return -1;
+        if (l == 1) return (int) s.get(0);
+        int result = (int) s.get(0);
+        for (int i = 1; i < s.size(); i += 1) {
+            result = cal(result, s.get(i));
+        }
+        return result;
+    }
+
+    private int cal(int number1, int number2) {
+        return ((number1*UNIQUECHARS)%PRIMEBASE + number2)%PRIMEBASE;
     }
 }
