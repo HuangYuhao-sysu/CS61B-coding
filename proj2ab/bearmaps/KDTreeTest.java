@@ -118,13 +118,13 @@ public class KDTreeTest {
 
     @Test
     public void finalTest() {
-        int NUMBER = 1000;
+        int NUMBER = 100000;
         Random r = new Random();
         List<Point> points = new ArrayList<>();
         for (int i = 0; i < NUMBER; i += 1) {
             double x, y;
-            x = r.nextDouble(-100, 100);
-            y = r.nextDouble(-100, 100);
+            x = r.nextInt(-1000000, 1000000);
+            y = r.nextInt(-1000000, 1000000);
             points.add(new Point(x, y));
         }
 
@@ -132,14 +132,14 @@ public class KDTreeTest {
         NaivePointSet nn = new NaivePointSet(points);
 
         for (int i = 0; i < NUMBER; i += 1) {
-            Point target = new Point(r.nextDouble(-100,100),r.nextDouble(-100,100));
+            Point target = new Point(r.nextDouble(-1000000,1000000),r.nextDouble(-1000000,1000000));
             assertEquals(kdn.nearest(target.getX(), target.getY()), nn.nearest(target.getX(), target.getY()));
         }
     }
 
     @Test
     public void speedTest() {
-        int NUMBER = 100000;
+        int NUMBER = 1000000;
         Random r = new Random();
         List<Point> points = new ArrayList<>();
         for (int i = 0; i < NUMBER; i += 1) {

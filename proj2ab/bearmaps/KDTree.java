@@ -73,57 +73,55 @@ public class KDTree {
 
     public Point nearest(double x, double y) {
         Point targetPoint = new Point(x, y);
-        return nearest(root, root, targetPoint);
+        return findNearest(root, targetPoint, 'x', root).p;
     }
 
-    private Point nearest(Node currentNode, Node nearestNode, Point targetPoint) {
-        if (currentNode == null) return nearestNode.p;
-        if (Point.distance(currentNode.p, targetPoint) < Point.distance(nearestNode.p, targetPoint)) {
-            nearestNode = currentNode;
-        }
+    private Node findNearest(Node current, Point target, Character attr, Node nearest) {
+        if (current == null) return nearest;
 
-        Node goodChild;
-        Node badChild;
-        if (currentNode.attr == 'x') {
-            if (targetPoint.getX() < currentNode.p.getX()) {
-                goodChild = currentNode.left;
-                badChild = currentNode.right;
-            } else {
-                goodChild = currentNode.right;
-                badChild = currentNode.left;
-            }
+        double currentDistance = Point.distance(current.p, target);
+        double nearestDistance = Point.distance(nearest.p, target);
+        if (currentDistance < nearestDistance) nearest = current;
+
+        Node goodSide;
+        Node badSide;
+        double cmp = 0;
+        if (attr == 'x') {
+            cmp = target.getX() - current.p.getX();
         } else {
-            if (targetPoint.getY() < currentNode.p.getY()) {
-                goodChild = currentNode.left;
-                badChild = currentNode.right;
-            } else {
-                goodChild = currentNode.right;
-                badChild = currentNode.left;
-            }
+            cmp = target.getY() - current.p.getY();
         }
 
-        // Always check goodChild.
-        Point goodNearest = nearest(goodChild, nearestNode, targetPoint);
-
-        // Not always check badChild.
-        Point badChildCouldNearest;
-        Point badNearest;
-        if (currentNode.attr == 'x') {
-            badChildCouldNearest = new Point(currentNode.p.getX(), targetPoint.getY());
+        if (cmp < 0) {
+            goodSide = current.left;
+            badSide = current.right;
         } else {
-            badChildCouldNearest = new Point(targetPoint.getX(), currentNode.p.getY());
+            goodSide = current.right;
+            badSide = current.left;
         }
 
-        if (Point.distance(nearestNode.p, targetPoint) > Point.distance(badChildCouldNearest, targetPoint)) {
-            badNearest = nearest(badChild, nearestNode, targetPoint);
+        Character newAttr = attr == 'x' ? 'y' : 'x';
+        nearest = findNearest(goodSide, target, newAttr, nearest);
+
+        double radius = Point.distance(nearest.p, target);
+        boolean findBadSide = findBadSide(current, target, radius, attr);
+        if (findBadSide) {
+            nearest = findNearest(badSide, target, newAttr ,nearest);
+        }
+
+        return nearest;
+    }
+
+    public boolean findBadSide(Node current, Point center, double radius, Character attr) {
+        double distance;
+        if (attr == 'x') {
+            distance = Math.abs(current.p.getX() - center.getX());
+            if (distance >= radius) return false;
         } else {
-            badNearest = nearestNode.p;
+            distance = Math.abs(current.p.getY() - center.getY());
+            if (distance >= radius) return false;
         }
-        
-        if (Point.distance(goodNearest, targetPoint) >= Point.distance(badNearest, targetPoint)) {
-            return badNearest;
-        }
-        return goodNearest;
+        return true;
     }
 
     public void printKDTree() {
