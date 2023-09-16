@@ -27,24 +27,45 @@ public class KDTreeTest {
         Point p1 = new Point(1.1, 2.2); // constructs a Point with x = 1.1, y = 2.2
         Point p2 = new Point(3.3, 4.4);
         Point p3 = new Point(-2.9, 4.2);
-    
+
         KDTree kdn = new KDTree(List.of(p1, p2, p3));
         kdn.printKDTree();
     }
 
     @Test
     public void KDMoreTest() {
-        int NUMBER = 10;
+        int NUMBER = 100;
         Random r = new Random();
         List<Point> points = new ArrayList<>();
         for (int i = 0; i < NUMBER; i += 1) {
             double x, y;
-            x = r.nextDouble(-5, 5);
-            y = r.nextDouble(-5, 5);
+            x = r.nextInt(0, 10);
+            y = r.nextInt(0, 10);
             points.add(new Point(x, y));
         }
 
         KDTree kdn = new KDTree(points);
+        kdn.printKDTree();
+    }
+
+    @Test
+    public void KDMoreTest2() {
+        Point p1 = new Point(5, 6);
+        Point p2 = new Point(1, 5);
+        Point p3 = new Point(7, 3);
+        Point p4 = new Point(2, 2);
+        Point p5 = new Point(4, 9);
+        Point p6 = new Point(9, 1);
+        Point p7 = new Point(8, 7);
+        Point p8 = new Point(6, 2);
+
+        Point[] points = new Point[]{p8,p7,p6,p5,p4,p3,p2,p1};
+        Random r = new Random();
+        List<Point> pointsList = new ArrayList<>();
+        for (Point p : points) {
+            pointsList.add(p);
+        }
+        KDTree kdn = new KDTree(pointsList);
         kdn.printKDTree();
     }
 
@@ -118,7 +139,7 @@ public class KDTreeTest {
 
     @Test
     public void speedTest() {
-        int NUMBER = 10000;
+        int NUMBER = 100000;
         Random r = new Random();
         List<Point> points = new ArrayList<>();
         for (int i = 0; i < NUMBER; i += 1) {

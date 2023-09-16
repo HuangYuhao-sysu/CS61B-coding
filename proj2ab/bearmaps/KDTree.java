@@ -1,5 +1,7 @@
 package bearmaps;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class KDTree {
@@ -16,38 +18,57 @@ public class KDTree {
         }
     }
 
+    Comparator<Point> xComparator = (p1, p2) -> Double.compare(p1.getX(), p2.getX());
+    Comparator<Point> yComparator = (p1, p2) -> Double.compare(p1.getY(), p2.getY());
+
     private Node root;
+    private ArrayList<Point> mutablePoints;
 
     public KDTree(List<Point> points) {
-        for (Point p : points) {
-            add(p);
-        }
+        mutablePoints = new ArrayList<>();
+        mutablePoints.addAll(points);
+        root = buildTree(root, mutablePoints, 'x');
     }
 
-    // Get a point and add to kd tree
-    private void add(Point point) {
-        this.root = add(root, point, 'x');
-    }
+    private Node buildTree(Node n, ArrayList<Point> points, Character attr) {
+        if (points.size() == 0) return null;
+        if (points.size() == 1) return new Node(points.get(0), attr);
 
-    private Node add(Node n, Point p, Character attr) {
-        if (n == null) return new Node(p, attr);
-        double cmp;
-        Character newAttr;
-        if (attr == 'x') {
-            cmp = p.getX() - n.p.getX();
-            newAttr = 'y';
-        } else {
-            cmp = p.getY() - n.p.getY();
-            newAttr = 'x';
-        }
-        if (cmp < 0) {
-            n.left = add(n.left, p, newAttr);
-        } else if (cmp > 0) {
-            n.right = add(n.right, p, newAttr);
-        } else {
-            n.p = p;
-        }
+        int middleIndex = findMiddle(points, attr);
+        Point middlePoint = points.get(middleIndex);
+        n = new Node(middlePoint, attr);
+
+        Character newAttr = attr == 'x' ? 'y' : 'x';
+        ArrayList<Point> left = splitPoints(points, middleIndex, "left");
+        ArrayList<Point> right = splitPoints(points, middleIndex, "right");
+        n.left = buildTree(n.left, left, newAttr);
+        n.right = buildTree(n.right, right, newAttr);
         return n;
+    }
+
+    private int findMiddle(List<Point> points, Character attr) {
+
+        if (attr == 'x') {
+            points.sort(xComparator);
+        } else {
+            points.sort(yComparator);
+        }
+        // 2 - > [] [0] [1]
+        // ...
+        // 7 - > [0-2] [3] [4-6]
+        // 8 - > [0-2] [3] [4-7]
+        // 9 - > [0-3] [4] [5-8]
+        return (points.size()-1)/2;
+    }
+
+    private ArrayList<Point> splitPoints(ArrayList<Point> points, int middleIndex, String leftOrRight) {
+        ArrayList<Point> Points = new ArrayList<>();
+        int startIndex = leftOrRight == "left" ? 0 : middleIndex + 1;
+        int endIndex = leftOrRight == "left" ? middleIndex : points.size();
+        for (int i = startIndex; i < endIndex; i += 1) {
+            Points.add(points.get(i));
+        }
+        return Points;
     }
 
     public Point nearest(double x, double y) {
